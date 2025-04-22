@@ -42,8 +42,16 @@ button.addEventListener("click", ()=>{
     let inputval =  document.getElementById("inputField").value;
 
     console.log(inputval);
+
+    if (inputval<1 || inputval >100){
+        alert("Please enter a number between 1 and 100");
+
+        document.getElementById("inputField").value = "";
+        return;
+    }
     deletegrid(getparentnode());
     insertgrid(getparentnode(), inputval);
+
     document.getElementById("inputField").value = "";
 
     document.querySelectorAll(".cell").forEach(cell => {
